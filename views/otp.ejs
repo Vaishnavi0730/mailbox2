@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Captcha Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style>
+        img{
+            border-radius: 50%;
+            height: 25%;
+            width: 15%;
+        }
+        
+		body {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            background-image : url(m4.0.png);
+            background-color: #cccccc; /* Used if the image is unavailable */
+            height: 750px; /* You must set a specified height */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+          }
+
+          .btn-primary {
+              background-color: rgb(23,162,184);
+              border: honeydew;
+          }
+
+          .btn-primary:hover {background-color: rgb(37, 108, 119)}
+
+          a{
+              color: rgb(23,162,184);
+          }
+
+          #capt{
+              font-style: italic;
+              font-style: italic;
+              text-decoration: line-through;
+              font-weight: bold;
+          }
+          
+    </style>
+</head>
+<body>
+    <h1>OTP IS SENT TO <%=email.toUpperCase()%></h1>
+
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-md-center h-100">
+                <div class="card-wrapper">
+                    <br><br><br>
+                    <div class="card fat">
+                        <div class="card-body">
+
+                            <form method="POST" action="/verifyotp">
+                                <h3>Validate OTP</h3>
+                                <input type="hidden" name="email" id="email" value=<%= email%> >
+                                <div class="form-group">
+                                    <label for="otp">Enter OTP</label>
+                                    <input id="otp" type="text" class="form-control" name="otp" value="" required autofocus>   
+                                </div>
+
+                                <div class="form-group m-0">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Verify OTP
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <form action="/gotocaptchapage" method="GET">
+        <div class="form-group m-0">
+            <button type="submit" class="btn btn-primary btn-block">
+                OTP Page
+            </button>
+        </div>
+    </form>
+</body>
+
+</html>
+
+
+   
+    
+    

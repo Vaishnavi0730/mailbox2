@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+          body { 
+			      text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #cccccc; 
+            background: url(m4.0.png) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+          }
+        table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+        }
+
+        th, td {
+        text-align: left;
+        padding: 16px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+        background-color: #ccc;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+          }
+
+          input[type=submit] {
+            background-color: rgb(23,162,184);
+            border: honeydew;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          
+          input[type=submit]:hover {
+            background-color: rgb(37, 108, 119);
+          }
+    </style>
+    <title>Inbox</title>
+</head>
+<body>
+    <br>
+    <form action="/back" method="POST">
+        <input type="hidden" name="email" id="email" value=<%= email%> >
+        <input type="submit" value="Back" style="border:2px solid white">
+    </form>
+
+    <div class="container">
+    <h1> <strong>Received Mail</strong></h1>
+    <table>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Delete</th>
+            <th>Forward</th>
+        </tr>
+        <% for(var i=0; i < data.length; i++) { %>
+           <tr>
+             <td><%= data[i].from %></td>
+             <td><%= data[i].to %></td>
+             <td><%= data[i].subject %></td>
+             <td><%= data[i].message %></td>
+             <td><%= data[i].date %></td>
+             <form action="/deleteinbox" method="POST">
+              <input type="hidden" name="email" id="email" value=<%= email%> >
+              <input type="hidden" name="id" id="id" value=<%= data[i]._id %>>
+             <td><button class="btn"><i class="fa fa-trash"></i></button></td>
+            </form>
+
+             <td>
+               <button class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-mail-forward" ></i></button>
+               <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Forward</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <div class="container">
+                      <form action="/forwardinbox" method="POST">
+                            <input type="hidden" name="id" id="id" value=<%= data[i]._id %>>
+                            <input type="hidden" name="from" id="from" value=<%= email%>>
+                            <label for="to">To</label>
+                            <input type="email" id="to" name="to" placeholder="To mail ID" required>
+                            <input type="submit" value="Submit"><br><br>
+                      </form>
+                      </div>
+                    </div> 
+                    </div>
+                  </div>
+                </div>
+            </td>
+
+           </tr>
+        <% } %>
+    </table>
+</div>
+</body>
+</html>
+
+

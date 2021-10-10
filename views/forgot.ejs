@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Forgot</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+	<style>
+		body {
+			text-align: center;
+			font-family: 'Times New Roman', Times, serif;
+			background-image : url(m4.0.png);
+			background-color: #cccccc; /* Used if the image is unavailable */
+			height: 750px; /* You must set a specified height */
+			background-position: center; /* Center the image */
+			background-repeat: no-repeat; /* Do not repeat the image */
+			background-size: cover; /* Resize the background image to cover the entire container */
+		  }
+
+		  .btn-primary {
+			background-color: rgb(23,162,184);
+			border: honeydew;
+		}
+
+		.btn-primary:hover {background-color: rgb(37, 108, 119)}
+	</style>
+</head>
+<body class="my--page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center align-items-center h-100">
+				<div class="card-wrapper">
+                    <img src="forgot.png" style="width: 8%; height:5%"><br><br>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">Forgot Password</h4>
+							<form method="POST" class="my-login-validation" action="/forgot">
+								<div class="form-group">
+									<label for="email">E-Mail Address</label>
+									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+									<div class="invalid-feedback">
+										Email is invalid
+									</div>
+									<label for="new-password">New Password</label>
+									<input id="new-password" type="password" class="form-control" name="password" required autofocus data-eye>
+									<div class="invalid-feedback">
+										Password is required
+									</div>
+								</div>
+
+								<div class="form-group m-0">
+									<button type="submit" class="btn btn-primary btn-block">
+										Reset Password
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+                        &nbsp &nbsp &nbsp &nbsp &nbsp <strong> Copyright &copy; 2021 &mdash; Y3V </strong>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

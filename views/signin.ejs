@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sign In</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<style>
+		img{
+            border-radius: 50%;
+            height: 25%;
+            width: 15%;
+        }
+
+		body {
+			text-align: center;
+			font-family: 'Times New Roman', Times, serif;
+			background-image : url(m4.0.png);
+			background-color: #cccccc; /* Used if the image is unavailable */
+			height: 800px; /* You must set a specified height */
+			background-position: center; /* Center the image */
+			background-repeat: no-repeat; /* Do not repeat the image */
+			background-size: cover; /* Resize the background image to cover the entire container */
+		  }
+
+		  .btn-primary {
+			background-color: rgb(23,162,184);
+			border: honeydew;
+		}
+
+			.btn-primary:hover {background-color: rgb(37, 108, 119)}
+
+		a{
+			color: rgb(23,162,184);
+		}
+	</style>
+</head>
+<body class="my-signin-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+                    <img src="icon.png" style="width: 20%; height:15%"><br>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">Register</h4>
+							<form method="POST" class="my-login-validation" action="signedin">
+								<div class="form-group">
+									<label for="fname">First Name</label>
+									<input id="fname" type="text" class="form-control" name="fname" required autofocus>
+									<div class="invalid-feedback">
+										What's your name?
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="lname">Last Name</label>
+									<input id="lname" type="text" class="form-control" name="lname" required autofocus>
+									<div class="invalid-feedback">
+										What's your name?
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="email">E-Mail Address</label>
+									<input id="email" type="email" class="form-control" name="email" required>
+									<div class="invalid-feedback">
+										Your email is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="password">Password</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<div class="invalid-feedback">
+										Password is required
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="cpassword">Confirm Password</label>
+									<input id="cpassword" type="password" class="form-control" name="cpassword" required data-eye>
+									<div class="invalid-feedback">
+										Password is required
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="custom-checkbox custom-control">
+										<input type="checkbox" name="agree" id="agree" class="custom-control-input" required="">
+										<label for="agree" class="custom-control-label">I agree to the Terms and Conditions</label>
+										<div class="invalid-feedback">
+											You must agree with our Terms and Conditions
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group m-0">
+									<button type="submit" class="btn btn-primary btn-block">
+										Register
+									</button>
+								</div>
+								<div class="mt-4 text-center">
+									Already have an account? <a href="/">Login</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+                        <strong> Copyright &copy; 2021 &mdash; Y3V </strong>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

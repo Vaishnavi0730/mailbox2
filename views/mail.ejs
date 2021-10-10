@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Mail</title>
+    <style>
+      body { 
+<<<<<<< HEAD
+			text-align: left;
+=======
+	text-align: left;
+>>>>>>> a243f8c94aaa2acbb72a98fe85583475208f2252
+        font-family: 'Times New Roman', Times, serif;
+        background-color: #cccccc; 
+        background: url(m4.0.png) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+      }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: rgb(23,162,184);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+          }
+          
+          .btn:hover {background-color: rgb(37, 108, 119)}
+          
+          .btn:active {
+            background-color: rgb(23,162,184);
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+          }
+        </style>
+</head>
+<body>
+  <br><br>
+<form action="/" method="GET">
+    <button class="btn float-right" style="margin-right:5em"><i class="fa fa-sign-out"></i> Logout</button>
+</form>
+<div class="container">
+    <h2 style="color: rgb(26, 74, 82); font-size: 3em"><strong> WELCOME <%= email.toUpperCase() %></strong> </h2>
+    <br>
+</div>
+
+<div class="container">
+<form action="/compose" method="POST">
+    <input type="hidden" name="email" id="email" value=<%= email%>>
+    <button class="btn"><i class="fa fa-plus"></i> Compose</button>
+</form>
+<br>
+<form action="/inbox" method="POST">
+    <input type="hidden" name="email" id="email" value=<%= email%>>
+    <button class="btn"><i class="fa fa-envelope"></i> Inbox</button>
+</form>
+<br>
+
+<form action="/sent" method="POST">
+    <input type="hidden" name="email" id="email" value=<%= email%>>
+    <button class="btn"><i class="fa fa-envelope-o"></i> Sent</button>
+</form>
+<br>
+</div>
+</body>
+</html>

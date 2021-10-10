@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Compose</title>
+<style>
+* {box-sizing: border-box;}
+body { 
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #cccccc; 
+  background: url(m4.0.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  backdrop-filter: blur(5px);
+
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+input[type=submit] {
+  background-color: rgb(23,162,184);
+  border: honeydew;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(37, 108, 119);
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+  <br>
+    <div class="container">
+      <h1><strong>Compose</strong></h1>
+    <form action="/mailsent" method="POST">
+          <label for="from">From</label>
+          <input type="email" id="from" name="from" placeholder="From mail ID" value=<%= email%> readonly>
+      <br>
+        <label for="to">To</label>
+        <input type="email" id="to" name="to" placeholder="To mail ID" required>
+      <br><br>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="subject" required>
+      <br>
+      
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Message to  be sent" style="height:200px" required></textarea>
+      
+          <input type="submit" value="Submit"><br><br>
+    </form>
+    <form action="/back" method="POST">
+      <input type="hidden" name="email" id="email" value=<%= email%> >
+      <input type="submit" value="Back" >
+    </form>       
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	
+</script>
+</body>
+</html>

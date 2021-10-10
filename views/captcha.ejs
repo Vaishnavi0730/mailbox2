@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Captcha Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style>
+        img{
+            border-radius: 50%;
+            height: 25%;
+            width: 15%;
+        }
+        
+		body {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            background-image : url(m4.0.png);
+            background-color: #cccccc; /* Used if the image is unavailable */
+            height: 750px; /* You must set a specified height */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+          }
+
+          .btn-primary {
+              background-color: rgb(23,162,184);
+              border: honeydew;
+          }
+
+          .btn-primary:hover {background-color: rgb(37, 108, 119)}
+
+          a{
+              color: rgb(23,162,184);
+          }
+
+          #capt{
+              font-style: italic;
+              font-style: italic;
+              text-decoration: line-through;
+              font-weight: bold;
+          }
+          
+    </style>
+</head>
+<body>
+
+
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-md-center h-100">
+                <div class="card-wrapper">
+                    <br><br><br>
+                    <!-- <img src="icon.png" style="width: 20%; height:15%"><br><br> -->
+
+                    <div class="card fat">
+                        <div class="card-body">
+                            <h4 class="card-title">Generate captcha</h4>
+
+                                <form method="POST" action="/validcap">
+                                    <div class="form-group">
+                                        <label for="capt">captcha</label>
+                                        <input id="capt" type="text" class="form-control" name="capt" value=<%=capt%> readonly>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="textinput">textinput</label>
+                                        <input id="textinput" type="text" class="form-control" name="textinput" value="" required autofocus>   
+                                    </div>
+
+                                    <div class="form-group m-0">
+                                        <button type="submit" class="btn btn-primary btn-block">
+                                            Go to login Page
+                                        </button>
+                                    </div>
+
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- <form action="/gotootppage" method="GET">
+        <div class="form-group m-0">
+            <button type="submit" class="btn btn-primary btn-block">
+                OTP Page
+            </button>
+        </div>
+    </form> -->
+</body>
+
+</html>
+
+
+   
+    
+    
